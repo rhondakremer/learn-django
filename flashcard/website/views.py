@@ -15,14 +15,17 @@ def add(request):
 
         correct_answer = int(old_num_1) + int(old_num_2)
         if int(answer) == correct_answer:
-            my_answer = "Correct"
+            my_answer = "Correct! " + old_num_1 + " + " + old_num_2 + " = " + str(correct_answer)
+            color = "success"
         else:
-            my_answer = "Wrong"
+            my_answer = "Wrong :( " + old_num_1 + " + " + old_num_2 + " does not equal " + answer
+            color = "danger"
         return render(request, 'add.html', {
             'answer': answer,
             'my_answer': my_answer,
             'num_1': num_1,
             'num_2': num_2,
+            'color': color,
         })
 
     return render(request, 'add.html', {
