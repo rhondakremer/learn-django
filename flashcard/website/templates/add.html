@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block 'content' %}
 <center>
@@ -10,7 +11,8 @@
     </button>
   </div>
   {% endif %}
-  <h1>{{ num_1 }} + {{ num_2 }}</h1>
+  <br>
+  <h1><img src="static/images/{{ num_1 }}.png"> + <img src="static/images/{{ num_2 }}.png"></h1>
   <br/>
   <form action="{% url 'add' %}" method="POST">
     {% csrf_token %}
